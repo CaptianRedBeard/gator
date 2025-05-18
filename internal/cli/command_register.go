@@ -4,10 +4,11 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
-	"gator/internal/database"
 	"time"
 
 	"github.com/google/uuid"
+
+	"gator/internal/database"
 )
 
 func RegisterHandler(s *State, cmd Command) error {

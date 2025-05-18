@@ -44,6 +44,12 @@ func main() {
 	commands.Register("reset", cli.Reset)
 	commands.Register("users", cli.Users)
 	commands.Register("agg", cli.Agg)
+	commands.Register("addfeed", cli.MiddlewareLoggedIn(cli.AddFeed))
+	commands.Register("feeds", cli.Feeds)
+	commands.Register("follow", cli.MiddlewareLoggedIn(cli.Follow))
+	commands.Register("following", cli.MiddlewareLoggedIn(cli.Following))
+	commands.Register("unfollow", cli.MiddlewareLoggedIn(cli.Unfollow))
+	commands.Register("browse", cli.MiddlewareLoggedIn(cli.Browse))
 
 	// Check if there are enough arguments
 	if len(os.Args) < 2 {
